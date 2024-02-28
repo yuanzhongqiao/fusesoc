@@ -1,120 +1,95 @@
-# FuseSoC
-
-[![CI status](https://github.com/olofk/fusesoc/workflows/CI/badge.svg)](https://github.com/olofk/fusesoc/actions?query=workflow%3ACI)
-[![image](https://img.shields.io/pypi/dm/fusesoc.svg?label=PyPI%20downloads)](https://pypi.org/project/fusesoc/)
-
-## Introduction
-
-FuseSoC is an award-winning package manager and a set of build tools for
-HDL (Hardware Description Language) code.
-
-Its main purpose is to increase reuse of IP (Intellectual Property)
-cores and be an aid for creating, building and simulating SoC solutions.
-
-FuseSoC makes it easier to
-
--   reuse existing cores
--   create compile-time or run-time configurations
--   run regression tests against multiple simulators
--   port designs to new targets
--   let other projects use your code
--   set up continuous integration
-
-To learn more about FuseSoC head over to the
-[User Guide](https://fusesoc.readthedocs.io/en/stable/user).
-
-## Getting started
-
-### Installing the latest release
-
-FuseSoC works on Linux, Windows, and macOS. It is written in Python and can be
-installed like any other Python package through "pip". Please refer to the
-full list of system requirements and installation instructions in the
-[Installation section in the User Guide](https://fusesoc.readthedocs.io/en/stable/user/installation.html).
-
-### Quick start
-
-To check if FuseSoC is working, and to get an initial feeling for how FuseSoC
-works, you can try to simulate a simple hardware design from our core libray.
-
-First, create and enter an empty workspace
-
-    mkdir workspace
-    cd workspace
-
-Install the FuseSoc base library into the workspace
-
-    fusesoc library add fusesoc-cores https://github.com/fusesoc/fusesoc-cores
-
-Get a list of cores found in the workspace
-
-    fusesoc core list
-
-If you have any of the supported simulators installed, you can try to
-run a simulation on one of the cores as well. For example,
-`fusesoc run --target=sim i2c` will run a regression test on the core
-i2c with Icarus Verilog. If you want to try another simulator instead,
-add e.g. `--tool=modelsim` or `--tool=xcelium` between `run` and `i2c`.
-
-`fusesoc --help` will give you more information on commands and switches.
-
-Did it work? Great! FuseSoC can be used to create FPGA images, perform
-linting, manage your IP libraries or do formal verification as well.
-Check out the [online documentation](https://fusesoc.readthedocs.io/en/stable/)
-documentation to learn more about creating your own core files and using
-existing ones. If it didn't work, please get in touch (see below).
-
-## Next steps
-
-A good way to get your first hands-on experience with FuseSoC is to
-contribute to the [LED to Believe](https://github.com/fusesoc/blinky)
-project. This project aims to used FuseSoC to blink a LED on every
-available FPGA development board in existence. There are already around
-40 different boards supported. If your board is already supported,
-great, then you can run your first FuseSoC-based design. If it's not
-supported, great, you now have the chance to add it to the list of
-supported boards. Either way, head over to [LED to
-Believe](https://github.com/fusesoc/blinky) to learn more and see how to
-go from a blinking LED to running a RISC-V core on an FPGA.
-
-## Need help?
-
-FuseSoC comes with extensive
-[online documentation](https://fusesoc.readthedocs.io/en/stable/index.html).
-
-For quick communication with the active developers, feel free to join us at the
-[FuseSoC chat](https://gitter.im/librecores/fusesoc).
-
-If you have found an issue, or want to know more about currently known problems,
-check out the
-[issue tracker on GitHub](https://github.com/olofk/fusesoc/issues).
-
-If you are looking for professional paid support, we are happy to
-provide feature additions, bug fixes, user training, setting up core
-libraries, migrating existing designs to FuseSoC and other things.
-Please contact <olof.kindgren@gmail.com> for more information.
-
-## Contributing to FuseSoC
-
-FuseSoC is developed by an active and friendly community, and you're welcome to
-join! You can read more about setting up a development environment in our
-[Developer's Guide](https://fusesoc.readthedocs.io/en/latest/dev/index.html).
-
-You can file bug reports and propose changes in the [olofk/fusesoc repository on GitHub](https://github.com/olofk/fusesoc).
-
-## Further reading
-
-* A Scalable Approach to IP Management with FuseSoC [paper](https://osda.gitlab.io/19/kindgren.pdf) and [slides](https://osda.gitlab.io/19/kindgren-slides.pdf) from OSDA 2019
-* Antmicro blog post on [how to use FuseSoC as a linter](https://antmicro.com/blog/2020/04/systemverilog-linter-and-formatter-in-fusesoc/)
-* [FuseSoC-related posts on the Tales from Beyond the Register Map blog](https://blog.award-winning.me/search/label/FuseSoC)
-* [Presentation from RISC-V Week 2022](https://www.award-winning.me/fusesoc-rvweek22)
-* [Presentation from Latch-Up Portland 2019](https://www.youtube.com/watch?v=7eWRAOK9mns)
-* [Presentation from WOSH 2019](https://www.youtube.com/watch?v=HOFYplIBSWM)
-* [Presentation from ORConf 2017](https://www.youtube.com/watch?v=iPpT9k_H67k)
-* [Presentation from ORConf 2016](https://www.youtube.com/watch?v=pKlJWe_HKPM)
-
-## License
-
-FuseSoC is licensed under the permissive 2-clause BSD license, freely allowing
-use, modification, and distribution of FuseSoC for all kinds of projects.
-Please refer to the [LICENSE](LICENSE) file for details.
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FUSESoC</font></font></h1><a id="user-content-fusesoc" class="anchor-element" aria-label="永久链接：FuseSoC" href="#fusesoc"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://github.com/olofk/fusesoc/actions?query=workflow%3ACI"><img src="https://github.com/olofk/fusesoc/workflows/CI/badge.svg" alt="100 个州" style="max-width: 100%;"></a>
+<a href="https://pypi.org/project/fusesoc/" rel="nofollow"><img src="https://camo.githubusercontent.com/7670888f253895460b09b919c1bfff1da682c17f88801e2141c7ca036a680892/68747470733a2f2f696d672e736869656c64732e696f2f707970692f646d2f66757365736f632e7376673f6c6162656c3d50795049253230646f776e6c6f616473" alt="图像" data-canonical-src="https://img.shields.io/pypi/dm/fusesoc.svg?label=PyPI%20downloads" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">介绍</font></font></h2><a id="user-content-introduction" class="anchor-element" aria-label="永久链接：简介" href="#introduction"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FuseSoC 是一款屡获殊荣的包管理器和一套 HDL（硬件描述语言）代码构建工具。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">其主要目的是增加 IP（知识产权）内核的重用，并为创建、构建和模拟 SoC 解决方案提供帮助。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FuseSoC 让您更轻松地</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">重用现有核心</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">创建编译时或运行时配置</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">针对多个模拟器运行回归测试</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">港口设计新目标</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">让其他项目使用您的代码</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置持续集成</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要了解有关 FuseSoC 的更多信息，请参阅
+</font></font><a href="https://fusesoc.readthedocs.io/en/stable/user" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用户指南</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">入门</font></font></h2><a id="user-content-getting-started" class="anchor-element" aria-label="永久链接：开始使用" href="#getting-started"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装最新版本</font></font></h3><a id="user-content-installing-the-latest-release" class="anchor-element" aria-label="永久链接：安装最新版本" href="#installing-the-latest-release"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FuseSoC 适用于 Linux、Windows 和 macOS。</font><font style="vertical-align: inherit;">它是用 Python 编写的，可以像任何其他 Python 包一样通过“pip”安装。</font><font style="vertical-align: inherit;">请参阅
+</font></font><a href="https://fusesoc.readthedocs.io/en/stable/user/installation.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用户指南的安装部分中</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的系统要求和安装说明的完整列表。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快速开始</font></font></h3><a id="user-content-quick-start" class="anchor-element" aria-label="永久链接：快速入门" href="#quick-start"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要检查 FuseSoC 是否正常工作，并初步了解 FuseSoC 的工作原理，您可以尝试从我们的核心库中模拟一个简单的硬件设计。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首先创建并进入一个空工作区</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>mkdir workspace
+cd workspace
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="mkdir workspace
+cd workspace" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将 FuseSoc 基础库安装到工作区中</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>fusesoc library add fusesoc-cores https://github.com/fusesoc/fusesoc-cores
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="fusesoc library add fusesoc-cores https://github.com/fusesoc/fusesoc-cores" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">获取工作区中找到的核心列表</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>fusesoc core list
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="fusesoc core list" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您安装了任何受支持的模拟器，您也可以尝试在其中一个内核上运行模拟。</font><font style="vertical-align: inherit;">例如，
+</font></font><code>fusesoc run --target=sim i2c</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将使用 Icarus Verilog 对核心 i2c 运行回归测试。</font><font style="vertical-align: inherit;">如果您想尝试另一个模拟器，请在</font><font style="vertical-align: inherit;">和</font><font style="vertical-align: inherit;">之间添加 eg</font></font><code>--tool=modelsim</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或</font><font style="vertical-align: inherit;">。</font></font><code>--tool=xcelium</code><font style="vertical-align: inherit;"></font><code>run</code><font style="vertical-align: inherit;"></font><code>i2c</code><font style="vertical-align: inherit;"></font></p>
+<p dir="auto"><code>fusesoc --help</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将为您提供有关命令和开关的更多信息。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有效吗？</font><font style="vertical-align: inherit;">伟大的！</font><font style="vertical-align: inherit;">FuseSoC 可用于创建 FPGA 映像、执行 linting、管理 IP 库或进行形式验证。</font><font style="vertical-align: inherit;">查看</font></font><a href="https://fusesoc.readthedocs.io/en/stable/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在线</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+文档，了解有关创建自己的核心文件和使用现有核心文件的更多信息。</font><font style="vertical-align: inherit;">如果不起作用，请联系我们（见下文）。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下一步</font></font></h2><a id="user-content-next-steps" class="anchor-element" aria-label="永久链接：后续步骤" href="#next-steps"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首次亲身体验 FuseSoC 的一个好方法是为</font></font><a href="https://github.com/fusesoc/blinky"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LED to Believe</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+项目做出贡献。</font><font style="vertical-align: inherit;">该项目旨在使用 FuseSoC 在现有的每个可用 FPGA 开发板上使 LED 闪烁。</font><font style="vertical-align: inherit;">已经支持大约 40 种不同的板。</font><font style="vertical-align: inherit;">如果您的主板已受支持，那就太好了，那么您就可以运行您的第一个基于 FuseSoC 的设计。</font><font style="vertical-align: inherit;">如果它不受支持，那就太好了，您现在有机会将其添加到受支持的板列表中。</font><font style="vertical-align: inherit;">无论哪种方式，请前往</font></font><a href="https://github.com/fusesoc/blinky"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LED to Believe</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">了解更多信息，并了解如何从闪烁的 LED 转变为在 FPGA 上运行 RISC-V 内核。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">需要帮忙？</font></font></h2><a id="user-content-need-help" class="anchor-element" aria-label="永久链接：需要帮助吗？" href="#need-help"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FuseSoC 附带大量
+</font></font><a href="https://fusesoc.readthedocs.io/en/stable/index.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在线文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为了与活跃的开发人员快速沟通，请随时加入我们的
+</font></font><a href="https://gitter.im/librecores/fusesoc" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FuseSoC 聊天室</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您发现问题，或者想了解有关当前已知问题的更多信息，请查看
+</font></font><a href="https://github.com/olofk/fusesoc/issues"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GitHub 上的问题跟踪器</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您正在寻求专业的付费支持，我们很乐意提供功能添加、错误修复、用户培训、设置核心库、将现有设计迁移到 FuseSoC 等服务。</font><font style="vertical-align: inherit;">请联系</font></font><a href="mailto:olof.kindgren@gmail.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">olof.kindgren@gmail.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">了解更多信息。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为 FuseSoC 做出贡献</font></font></h2><a id="user-content-contributing-to-fusesoc" class="anchor-element" aria-label="永久链接：为 FuseSoC 做出贡献" href="#contributing-to-fusesoc"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FuseSoC是由一个活跃且友好的社区开发的，欢迎您加入！</font></font><a href="https://fusesoc.readthedocs.io/en/latest/dev/index.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以在我们的开发人员指南</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中阅读有关设置开发环境的更多信息
+</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://github.com/olofk/fusesoc"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以在 GitHub 上的 olofk/fusesoc 存储库</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中提交错误报告并提出更改建议</font><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">进一步阅读</font></font></h2><a id="user-content-further-reading" class="anchor-element" aria-label="永久链接：进一步阅读" href="#further-reading"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用OSDA 2019 的FuseSoC</font></font><a href="https://osda.gitlab.io/19/kindgren.pdf" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">论文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://osda.gitlab.io/19/kindgren-slides.pdf" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幻灯片</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">实现可扩展的 IP 管理方法</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Antmicro 博客文章，介绍</font></font><a href="https://antmicro.com/blog/2020/04/systemverilog-linter-and-formatter-in-fusesoc/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如何使用 FuseSoC 作为 linter</font></font></a></li>
+<li><a href="https://blog.award-winning.me/search/label/FuseSoC" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tales from Beyond the Register Map 博客上的 FuseSoC 相关帖子</font></font></a></li>
+<li><a href="https://www.award-winning.me/fusesoc-rvweek22" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RISC-V Week 2022 的演讲</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=7eWRAOK9mns" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2019 年 Latch-Up 波特兰演讲</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=HOFYplIBSWM" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">WOSH 2019 的演讲</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=iPpT9k_H67k" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ORConf 2017 的演讲</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=pKlJWe_HKPM" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ORConf 2016 的演讲</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2><a id="user-content-license" class="anchor-element" aria-label="永久链接：许可证" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FuseSoC 根据宽松的 2 条款 BSD 许可证获得许可，允许为各种项目自由使用、修改和分发 FuseSoC。</font><font style="vertical-align: inherit;">详细信息</font><font style="vertical-align: inherit;">请参阅</font></font><a href="/olofk/fusesoc/blob/main/LICENSE"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LICENSE文件。</font></font></a><font style="vertical-align: inherit;"></font></p>
+</article></div>
